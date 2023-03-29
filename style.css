@@ -11,24 +11,36 @@
       background-color: #f9f9f9;
       color: #323232;
     }
-    .container{
-      max-width: 780px;
-      width: 95%;
-      margin: 0 auto;
+    #flare{
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      right: 0px;
+      width: 100vw;
+      height: 8vh;
+      background: url('oldnewz-kick.gif') repeat 0 0;
     }
     .wrapper{
+      max-width: 1850px;
+      margin: 0 auto;
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 1rem;
     }
     header{
-      background-color: #FC009E;
-      color: #323232;
+      background-color: #333;
+      color: #fff;
+      /* width: fit-content; */
       text-align: center;
-      padding: 8px;
-      margin-bottom: 10px;
+      padding: 16px;
+      margin: 12px auto 14px;
       font-weight: normal;
       font-size: 20px;
+    }
+    .container{
+      max-width: 780px;
+      width: 95%;
+      margin: 0 auto;
     }
     a{
       color: #0069ff;
@@ -36,6 +48,7 @@
     }
     img{
       max-width: 100%;
+      /* min-width: 500px; */
       height: auto;
       display: block;
     }
@@ -43,6 +56,10 @@
       text-transform: uppercase;
       letter-spacing: 1vw;
       text-align: center;
+      margin: 82px 0px 0px;
+    }
+    a.home-link{
+      width: 100%;
     }
     h1,h2{
       text-transform: uppercase;
@@ -50,14 +67,13 @@
       display: inline;
       padding: 10px 0;
       display: inline-block;
-      margin: 10px 0;
+      margin: 0px 0;
     }
     h1{
       color: #f7f7f5;
       font-size: 34px;
-      line-height: 50px;
+      line-height: 56px;
       font-weight: 900;
-      margin-bottom: 10px;
       padding: 8px 0;
       border-radius: 4px;
       text-align: justify;
@@ -71,7 +87,7 @@
       line-height: 36px;
       font-weight: 100;
       font-style: italic;
-      text-align: justify;
+      text-align: left;
     }
     .block{
       height: 35px;
@@ -88,7 +104,7 @@
       letter-spacing: .4px;
     }
     em{
-      background: #ffff0055;
+      background: #ffff00;
       box-shadow: 1px 1px 4px 3px #ffff0099;
       font-style: normal;
       /* padding: 2px 8px 4px 4px; */
@@ -105,6 +121,7 @@
       margin: 10px 0;
       text-transform: uppercase;
       text-decoration: line-through;
+      text-align: right;
     }
     table{
       width: 100%;
@@ -114,4 +131,18 @@
     }
     td{
        padding: 0 40px 0 0;
+    }
+
+    @media (min-width: 1200px){
+      #flare{
+        width: 20vw;
+        height: 30vh;
+        clip-path: polygon(0 0, 100% 0, 0 100%);
+      }
+      h3{
+        text-transform: uppercase;
+        letter-spacing: 1vw;
+        text-align: center;
+        margin: 22px 0px 20px;
+      }
     }
