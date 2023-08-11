@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+
 
 // modal / carousel swiper
 const modal = document.getElementById('imageModal');
@@ -6,14 +6,14 @@ const modalContent = document.querySelector('.modal-content');
 const carousel = document.getElementById('imageCarousel');
 
 const imageUrls = [
-  'bird.jpg',
-  'damn.jpg',
-  'pushchair.jpg',
-  'patients.jpg',
-  'copy.jpg',
-  'bird.jpg',
-  'damn.jpg',
-  'pushchair.jpg',
+  '../images/sisy/bird.jpg',
+  '../images/sisy/damn.jpg',
+  '../images/sisy/pushchair.jpg',
+  '../images/sisy/patients.jpg',
+  '../images/sisy/copy.jpg',
+  '../images/sisy/bird.jpg',
+  '../images/sisy/damn.jpg',
+  '../images/sisy/pushchair.jpg',
 ];
 
 
@@ -58,7 +58,3 @@ modalContent.addEventListener('click', closeModal);
 
 
 generateGrid();
-
-
-
-});

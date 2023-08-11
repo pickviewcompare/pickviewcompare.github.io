@@ -14,3 +14,4 @@ notes.php
 .expo-shared 
 dist 
 build
+archive/*
