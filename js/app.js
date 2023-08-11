@@ -1,6 +1,7 @@
 const modal = document.getElementById('imageModal');
 const modalContent = document.querySelector('.modal-content');
 const carousel = document.getElementById('imageCarousel');
+let isArrowAnimationTriggered = false;
 
 async function generateGrid() {
   const homeGrid = document.getElementById('homeGrid');
@@ -16,6 +17,8 @@ async function generateGrid() {
       const imgElement = document.createElement('img');
       imgElement.src = imageUrl;
       imgElement.alt = 'Image';
+
+// openModal(imageUrl);
 
       // Create a click event listener for each image
       imgElement.addEventListener('click', async () => {
@@ -33,7 +36,7 @@ async function generateGrid() {
 
 function closeModal() {
   modal.style.display = 'none';
-  document.body.style.overflow = 'auto';
+  document.body.classList.remove('no-scroll');
 }
 
 async function openModal(imageUrl) {
@@ -54,7 +57,18 @@ async function openModal(imageUrl) {
     modalContent.innerHTML = '';
 
     modal.style.display = 'flex';
+    document.body.classList.add('no-scroll');
 
+    // Instruction to user to scroll/swipe right
+    if (!isArrowAnimationTriggered) {
+      modal.classList.add('modal-arrow');
+      isArrowAnimationTriggered = true;
+        
+      setTimeout(() => {  
+          modal.classList.remove('modal-arrow');
+      }, 3000);
+    }
+    
     // Create a new carousel element for the modal
     const newCarousel = document.createElement('div');
     newCarousel.id = 'imageCarousel';
@@ -72,6 +86,7 @@ async function openModal(imageUrl) {
       img.alt = 'Image';
       newCarousel.appendChild(img);
     });
+    
 
     modalContent.appendChild(newCarousel);
   } catch (error) {
