@@ -26,12 +26,28 @@ function generateGrid() {
 
     divElement.appendChild(imgElement);
     homeGrid.appendChild(divElement);
+
+    const imgElements = document.querySelectorAll('img');
+    const socials = document.querySelector('.socials')
+    
+      imgElements.forEach((img) => {
+        if(!socials.contains(img)){
+          img.addEventListener('click', () => {
+          openModal();
+        });
+      }
+    });
   });
 }
 
-// Export the generateGrid function as a property of the global object
-window.generateGrid = generateGrid;
+function openModal() {
+  modal.style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+}
 
+function closeModal() {
+  modal.style.display = 'none';
+  document.body.style.overflow = 'auto';
+}
 
-
-
+generateGrid();

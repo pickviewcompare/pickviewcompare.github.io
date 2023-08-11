@@ -1,19 +1,15 @@
-
-
-// modal / carousel swiper
 const modal = document.getElementById('imageModal');
 const modalContent = document.querySelector('.modal-content');
 const carousel = document.getElementById('imageCarousel');
 
 const imageUrls = [
+  '../images/home-grid/pushchair.jpg',
   '../images/sisy/bird.jpg',
   '../images/sisy/damn.jpg',
-  '../images/sisy/pushchair.jpg',
   '../images/sisy/patients.jpg',
   '../images/sisy/copy.jpg',
   '../images/sisy/bird.jpg',
   '../images/sisy/damn.jpg',
-  '../images/sisy/pushchair.jpg',
 ];
 
 
@@ -31,30 +27,6 @@ function createImageElements() {
   carousel.style.width = `${totalWidth}%`;
 }
 
-// Call createImageElements() once initially
-createImageElements();
-
-const imgElements = document.querySelectorAll('img');
-const socials = document.querySelector('.socials')
-imgElements.forEach((img) => {
-  if(!socials.contains(img)){
-    img.addEventListener('click', () => {
-    openModal();
-  });
-  }
-});
-
-function openModal() {
-  modal.style.display = 'flex';
-  document.body.style.overflow = 'hidden';
-}
-
-function closeModal() {
-  modal.style.display = 'none';
-  document.body.style.overflow = 'auto';
-}
-
 modalContent.addEventListener('click', closeModal);
 
-
-generateGrid();
+createImageElements();
