@@ -131,7 +131,7 @@ footer{
   align-items: center;
   overflow-x: hidden;
   width: 100%;
-  margin: 2rem auto 14px;
+  margin: 2rem auto 0px;
 }
 footer a{
   color: white;

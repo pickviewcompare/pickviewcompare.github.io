@@ -7,7 +7,7 @@ async function generateGrid() {
   const homeGrid = document.getElementById('homeGrid');
 
   try {
-    const response = await fetch('../images/home-grid/homeGrid.json');
+    const response = await fetch('../images/homeGrid.json');
     const imageUrls = await response.json();
 
     imageUrls.forEach((imageUrl) => {
@@ -45,7 +45,7 @@ async function openModal(imageUrl) {
     const imageName = imageUrl.split('/').pop().replace('.jpg', '');
 
     // Construct the JSON file URL based on the clicked image's filename
-    const jsonUrl = `../images/${imageName}/${imageName}.json`; // Adjust the path as needed
+    const jsonUrl = `../images/${imageName}.json`; // Adjust the path as needed
 
     const response = await fetch(jsonUrl);
     const imageUrls = await response.json();
@@ -102,7 +102,7 @@ async function createImageElements(carousel, imageUrl) {
     const imageName = imageUrl.split('/').pop().replace('.jpg', '');
 
     // Construct the JSON file URL based on the clicked image's filename
-    const jsonUrl = `../images/${imageName}/${imageName}.json`; // Adjust the path as needed
+    const jsonUrl = `../images/${imageName}.json`; // Adjust the path as needed
 
     const response = await fetch(jsonUrl);
     const imageUrls = await response.json();
