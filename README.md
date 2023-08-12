@@ -6,4 +6,4 @@
 ![preview](/preview.png)
 
 
-`PVC :>0`
+`PVC`
