@@ -10,7 +10,7 @@ async function generateGrid() {
     const response = await fetch('../images/homeGrid.json');
     const data = await response.json();
 
-    data.forEach(({ imageUrl, imageName }) => {
+    data.forEach(({ imageUrl, imageName, artist }) => {
       const divElement = document.createElement('div');
       divElement.classList.add('grid-item');
 
@@ -18,12 +18,17 @@ async function generateGrid() {
       imgElement.src = imageUrl;
       imgElement.alt = 'Image';
 
+      const paragraphElement = document.createElement('p');
+      paragraphElement.classList.add("artist");
+      paragraphElement.textContent = artist;
+
       imgElement.addEventListener('click', async () => {
         await openModal(imageName, imageUrl);
         await createImageElements(carousel, imageName);
       });
 
       divElement.appendChild(imgElement);
+      divElement.appendChild(paragraphElement);
       homeGrid.appendChild(divElement);
     });
   } catch (error) {

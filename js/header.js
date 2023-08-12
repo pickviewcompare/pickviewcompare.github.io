@@ -1,6 +1,6 @@
 // header animated titles loop
 const headerElement = document.getElementById('rolling-header');
-    const strings = ['12 Artists rescued from the void', 'featuring...', 'dehzer', '/|\\ v /|\\', 'social cred!t card reader', 'terminal glitch', 'digital rips', 'smush', 'marmalade malaise', 'bills board', 'geogen', 'toot', 'CG', 'S!$Y', 'Hang out, look around, enjoy yourself!', 'PVC'];
+    const strings = ['12 Artists rescued from the void', 'featuring...', 'dehzer', '/|\\ v /|\\', 'social cred!t card reader', 'terminal glitch', 'digital rips', 'smush', 'marmalade malaise', 'bills bored', 'geogen', 'toot', 'CG', 'S!$Y', 'Hang out, look around, enjoy yourself!', 'PVC'];
     let currentHeaderIndex = 0;
 
     function updateHeader() {
