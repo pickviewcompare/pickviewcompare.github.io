@@ -81,6 +81,10 @@ async function openModal(imageName, imageUrl) {
     });
     
     modalContent.appendChild(newCarousel);
+
+    // Set the scroll position of the newCarousel to the beginning
+    newCarousel.scrollLeft = 0;
+
   } catch (error) {
     console.error('Error fetching image URLs:', error);
   }
