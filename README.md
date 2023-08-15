@@ -1,5 +1,5 @@
 ## Pick View Compare
-### 12 Artists rescued from the void
+### 12 art projects rescued from the void
 
 (LIVE SITE)[https://pickviewcompare.github.io]
 
