@@ -1,3 +1,7 @@
+document.addEventListener("DOMContentLoaded", function () {
+
+let previousScrollPosition = 0; // Store the previous scroll position
+
 const modal = document.getElementById('imageModal');
 const modalContent = document.querySelector('.modal-content');
 const carousel = document.getElementById('imageCarousel');
@@ -23,6 +27,7 @@ async function generateGrid() {
       paragraphElement.textContent = artist;
 
       imgElement.addEventListener('click', async () => {
+        previousScrollPosition = window.scrollY; // Store the current scroll position
         await openModal(imageName, imageUrl);
         await createImageElements(carousel, imageName);
       });
@@ -30,16 +35,27 @@ async function generateGrid() {
       divElement.appendChild(imgElement);
       divElement.appendChild(paragraphElement);
       homeGrid.appendChild(divElement);
+
     });
   } catch (error) {
     console.error('Error fetching image URLs:', error);
   }
 }
 
+
+
 function closeModal() {
   modal.style.display = 'none';
   document.body.classList.remove('no-scroll');
+  window.scrollTo(0, previousScrollPosition); // Restore the previous scroll position
+  document.removeEventListener("keydown", handleEscKeyPress);
 }
+
+function handleEscKeyPress(event) {
+    if (event.key === "Escape") {
+      closeModal();
+    }
+  }
 
 async function openModal(imageName, imageUrl) {
   try {
@@ -84,7 +100,7 @@ async function openModal(imageName, imageUrl) {
 
     // Set the scroll position of the newCarousel to the beginning
     newCarousel.scrollLeft = 0;
-
+    document.addEventListener("keydown", handleEscKeyPress);
   } catch (error) {
     console.error('Error fetching image URLs:', error);
   }
@@ -116,3 +132,5 @@ async function createImageElements(carousel, imageName) {
 modalContent.addEventListener('click', closeModal);
 
 generateGrid();
+
+});
